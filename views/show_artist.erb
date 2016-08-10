@@ -1,0 +1,11 @@
+
+<b>Name:</b>
+<p><%= @artists.name %></p>
+
+<form action="/artists/<%= @artists.id %>/edit" method="get">
+  <input type="submit" value="Edit">
+</form>
+
+<form action="/artists/<%= @artists.id  %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>

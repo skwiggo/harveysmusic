@@ -61,6 +61,7 @@ end
 
 #NEW - HTML FORM
 get '/albums/new' do 
+  @artists = Artist.all()
   erb(:new_album)
 end
 

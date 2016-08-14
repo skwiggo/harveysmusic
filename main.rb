@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative('./models/artist')
 require_relative('./models/album')
+require_relative('./models/stock')
 
 
 #UPDATE
@@ -14,31 +15,31 @@ end
 #INDEX
 get '/artists' do
   @artists = Artist.all()
-  erb (:artist_index)
+  erb (:'artists/index')
 end
 
 #NEW - HTML FORM
 get '/artists/new' do 
-  erb(:new_artist)
+  erb(:'artists/new')
 end
 
 #EDIT - HTML
 get '/artists/:id/edit' do
   @artists = Artist.find(params[:id])
-  erb(:edit_artist)
+  erb(:'artists/edit')
 end
 
 #SHOW
 get '/artists/:id' do
   @artists = Artist.find(params[:id])
-  erb(:show_artist)
+  erb(:'artists/show')
 end
 
 #CREATE
 post '/artists' do 
   @artists = Artist.new(params)
   @artists.save() 
-  erb(:create_artist)
+  erb(:'artists/create')
 end
 
 #DESTROY
@@ -56,32 +57,32 @@ end
 #INDEX
 get '/albums' do
   @albums = Album.all()
-  erb(:album_index)
+  erb(:'albums/index')
 end
 
 #NEW - HTML FORM
 get '/albums/new' do 
   @artists = Artist.all()
-  erb(:new_album)
+  erb(:'albums/new')
 end
 
 #EDIT - HTML
 get '/albums/:id/edit' do
   @albums = Album.find(params[:id])
-  erb(:edit_album)
+  erb(:'albums/edit')
 end
 
 #SHOW
 get '/albums/:id' do
   @albums = Album.find(params[:id])
-  erb(:show_album)
+  erb(:'albums/show')
 end
 
 #CREATE
 post '/albums' do 
   @albums = Album.new(params)
   @albums.save() 
-  erb(:create_album)
+  erb(:'albums/create')
 end
 
 #DESTROY

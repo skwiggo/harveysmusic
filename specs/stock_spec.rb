@@ -26,5 +26,11 @@ class TestArtist < MiniTest::Test
     assert_equal("Medium", @stock.stock_health())
   end
 
+  def test_buy_price()
+    assert_equal(5, @stock.buy_price())
+  end
 
+  def test_sell_price()
+    assert_equal(7, @stock.sell_price())
+  end
 end

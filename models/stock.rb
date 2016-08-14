@@ -22,8 +22,17 @@ class Stock
     @sell_price = options['sell_price'].to_i
   end
 
+  def self.update(options)
+    sql = "UPDATE stock SET
+          stock_level = '#{options['stock_level']}'
+          buy_price = options['buy_price']
+          sell_price = options['sell_price']
+          WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
+  end
+
   def save()
-    sql = "INSERT INTO stocks (album_id, format, stock_level, stock_health, buy_price, sell_price) VALUES 
+    sql = "INSERT INTO stocks (album_id, stock_level, stock_health, buy_price, sell_price) VALUES 
     ( #{@album_id}, #{@stock_level}, #{'@stock_health'}, #{@buy_price}, #{@sell_price}) RETURNING *"
     stock = SqlRunner.run(sql).first
     @id = stock['id']
@@ -35,7 +44,5 @@ class Stock
     result = Album.new(album)
     return result
   end
-
-
 
 end

@@ -7,7 +7,9 @@ class TestArtist < MiniTest::Test
     options = {
       'album_id' => 1,
       'stock_level' => 10,
-      'stock_health' => "Medium"
+      'stock_health' => "Medium",
+      'buy_price' => 5,
+      'sell_price' => 7
     }
     @stock = Stock.new(options)
   end

@@ -1,33 +1,34 @@
-require( 'pg' )
-require_relative( '../db/sql_runner' )
-require_relative( '../models/album' )
+require('pg')
+require_relative('../db/sql_runner')
+require_relative('../models/album')
 
 class Artist
 
-  attr_reader( :id, :name )
+  attr_reader( :id, :name, :genre )
 
   def initialize( options )
     @id = options['id'].to_i
     @name = options['name']
+    @genre = options['genre']
   end
 
   def save()
-    sql = "INSERT INTO artists (name) VALUES ('#{ @name }') RETURNING *"
-    artist = SqlRunner.run( sql ).first
+    sql = "INSERT INTO artists (name, genre) VALUES ('#{@name}', '#{@genre}') RETURNING *"
+    artist = SqlRunner.run(sql).first
     @id = artist['id']
   end
 
   def albums()
-    sql = "SELECT * FROM albums WHERE artist_id = #{ @id }"
-    albums = SqlRunner.run( sql )
-    result = albums.map { |a| Album.new( a ) }
+    sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
+    albums = SqlRunner.run(sql)
+    result = albums.map {|album| Album.new(album)}
     return result
   end
 
   def self.all()
     sql = "SELECT * FROM artists"
-    artists = SqlRunner.run( sql )
-    result = artists.map { |a| Artist.new( a ) }
+    artists = SqlRunner.run(sql)
+    result = artists.map {|artist| Artist.new(artist)}
     return result
   end
 
@@ -40,6 +41,7 @@ class Artist
   def self.update(options)
     sql = "UPDATE artists SET
           name = '#{options['name']}'
+          genre = '#{options['genre']}'
           WHERE id = #{options['id']}"
     SqlRunner.run(sql)
   end

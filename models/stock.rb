@@ -33,7 +33,7 @@ class Stock
 
   def save()
     sql = "INSERT INTO stocks (album_id, stock_level, stock_health, buy_price, sell_price) VALUES 
-    ( #{@album_id}, #{@stock_level}, '#{'@stock_health'}', #{@buy_price}, #{@sell_price}) RETURNING *"
+    ( #{@album_id}, #{@stock_level}, '#{@stock_health}', #{@buy_price}, #{@sell_price}) RETURNING *"
     stock = SqlRunner.run(sql).first
     @id = stock['id']
   end

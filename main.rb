@@ -90,3 +90,46 @@ post '/albums/:id/delete' do
   Album.destroy(params[:id])
   redirect(to('/albums'))
 end
+
+#UPDATE
+post '/stocks/:id' do
+  Stock.update(params)
+  redirect(to( "/stocks/#{params[:id]}"))
+end
+
+#INDEX
+get '/stocks' do
+  @stocks = Stock.all()
+  erb(:'stocks/index')
+end
+
+#NEW 
+get '/stocks/new' do 
+  @albums = Album.all()
+  erb(:'stocks/new')
+end
+
+#EDIT 
+get '/stocks/:id/edit' do
+  @stocks = Stock.find(params[:id])
+  erb(:'stocks/edit')
+end
+
+#SHOW
+get '/stocks/:id' do
+  @stocks = Stock.find(params[:id])
+  erb(:'stocks/show')
+end
+
+#CREATE
+post '/stocks' do 
+  @stocks = Stock.new(params)
+  @stocks.save() 
+  erb(:'stocks/create')
+end
+
+#DESTROY
+post '/stocks/:id/stock' do
+  Album.destroy(params[:id])
+  redirect(to('/stocks'))
+end

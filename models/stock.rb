@@ -42,7 +42,7 @@ class Stock
 
   def save()
     sql = "INSERT INTO stocks (album_id, stock_level, buy_price, sell_price) VALUES 
-    ( #{@album_id}, #{@stock_level}, #{@buy_price}, #{@sell_price}) RETURNING *"
+    (#{@album_id}, #{@stock_level}, #{@buy_price}, #{@sell_price}) RETURNING *"
     stock = SqlRunner.run(sql).first
     @id = stock['id']
   end
@@ -56,7 +56,7 @@ class Stock
 
   def artists()
     sql = "SELECT * FROM artists WHERE id = #{@album_id}"
-    albums = SqlRunner.run(sql)
+    artists = SqlRunner.run(sql)
     result = artists.map {|artist| Artist.new(artist)}
     return result
   end

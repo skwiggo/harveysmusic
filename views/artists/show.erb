@@ -3,7 +3,7 @@
 <p><%= @artists.name %></p>
 
 <% @artists.albums.each do |album| %>
-<p> <%= album.name %></p>
+<p><%= album.name %></p>
 <% end %>
 
 <form action="/artists/<%= @artists.id %>/edit" method="get">

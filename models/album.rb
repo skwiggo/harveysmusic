@@ -1,5 +1,6 @@
 require( 'pg' )
 require_relative('../db/sql_runner')
+require_relative('../models/artist')
 
 class Album
 
@@ -37,14 +38,14 @@ class Album
   end
 
   def save()
-    sql = "INSERT INTO albums (name, artist_id) VALUES ('#{@name}', #{ @artist_id}) RETURNING *"
+    sql = "INSERT INTO albums (name, artist_id) VALUES ('#{@name}', #{@artist_id}) RETURNING *"
     album = SqlRunner.run(sql).first
     @id = album['id']
   end               
   
   def artists()
-    sql = "SELECT * FROM artists WHERE id = #{@id}"
-    albums = SqlRunner.run(sql)
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id}"
+    artists = SqlRunner.run(sql)
     result = artists.map {|artist| Artist.new(artist)}
     return result
   end

@@ -54,12 +54,12 @@ class Stock
   end
 
   def stock_check()
-    if @stock_level > 10
-      puts "High"
-    elsif @stock_level >= 5
-      puts "Medium"
-    elsif @stock_level <= 4
-      puts "Low - Please re-order ASAP"
+    if @stock_level >= 10
+      return "High"
+    elsif @stock_level >= 4
+      return "Medium"
+    elsif @stock_level <= 3
+      return "Low - Please re-order ASAP"
     end
   end
 

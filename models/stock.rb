@@ -23,7 +23,7 @@ class Stock
   end
 
   def self.update(options)
-    sql = "UPDATE stock SET
+    sql = "UPDATE stocks SET
           stock_level = '#{options['stock_level']}'
           buy_price = options['buy_price']
           sell_price = options['sell_price']

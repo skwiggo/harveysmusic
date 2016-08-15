@@ -18,7 +18,6 @@ CREATE TABLE stocks (
   id serial4 primary key,
   album_id int4 references albums(id) ON DELETE CASCADE,
   stock_level int4,
-  stock_health VARCHAR(255),
   buy_price int4,
   sell_price int4
 );

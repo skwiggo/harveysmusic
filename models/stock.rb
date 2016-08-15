@@ -10,7 +10,6 @@ class Stock
     @id = options['id'].to_i
     @album_id = options['album_id'].to_i
     @stock_level = options['stock_level'].to_i
-    @stock_health = options['stock_health']
     @buy_price = options['buy_price'].to_i
     @sell_price = options['sell_price'].to_i
   end
@@ -41,8 +40,8 @@ class Stock
   end
 
   def save()
-    sql = "INSERT INTO stocks (album_id, stock_level, stock_health, buy_price, sell_price) VALUES 
-    ( #{@album_id}, #{@stock_level}, '#{@stock_health}', #{@buy_price}, #{@sell_price}) RETURNING *"
+    sql = "INSERT INTO stocks (album_id, stock_level, buy_price, sell_price) VALUES 
+    ( #{@album_id}, #{@stock_level}, #{@buy_price}, #{@sell_price}) RETURNING *"
     stock = SqlRunner.run(sql).first
     @id = stock['id']
   end
@@ -52,6 +51,16 @@ class Stock
     albums = SqlRunner.run(sql)
     result = albums.map {|album| Album.new(album)}
     return result
+  end
+
+  def stock_check()
+    if @stock_level > 10
+      puts "High"
+    elsif @stock_level >= 5
+      puts "Medium"
+    elsif @stock_level <= 4
+      puts "Low - Please re-order ASAP"
+    end
   end
 
 end

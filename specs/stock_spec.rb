@@ -7,7 +7,6 @@ class TestArtist < MiniTest::Test
     options = {
       'album_id' => 1,
       'stock_level' => 10,
-      'stock_health' => "Medium",
       'buy_price' => 5,
       'sell_price' => 7
     }
@@ -32,5 +31,9 @@ class TestArtist < MiniTest::Test
 
   def test_sell_price()
     assert_equal(7, @stock.sell_price())
+  end
+
+  def test_stock_level()
+    assert_equal("High", @stock.stock_check)
   end
 end

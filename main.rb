@@ -6,6 +6,14 @@ require_relative('./models/album')
 require_relative('./models/stock')
 
 
+# MAIN INDEX(INVENTORY)
+get '/index' do
+  @artists = Artist.all()
+  @albums = Album.all()
+  @stocks = Stock.all()
+  erb(:index)
+end
+
 #UPDATE
 post '/artists/:id' do
   Artist.update(params)
@@ -15,7 +23,7 @@ end
 #INDEX
 get '/artists' do
   @artists = Artist.all()
-  erb (:'artists/index')
+  erb(:'artists/index')
 end
 
 #NEW - HTML FORM

@@ -3,8 +3,8 @@
 <p><%= @stocks.stock_level %></p>
 
 <b>Album:</b>
-<% @stocks.album.each do |album| %>
-<p> <%= album.name %></p>
+<% @stocks.each do |stock| %>
+<p> <%= stock.album_id %></p>
 <% end %>
 
 <form action="/stocks/<%= @stocks.id %>/edit" method="get">

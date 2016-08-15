@@ -22,6 +22,12 @@ class Stock
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM stocks WHERE id = #{id};"
+    stock = SqlRunner.run(sql).first
+    return Stock.new(stock)
+  end
+
   def self.update(options)
     sql = "UPDATE stocks SET
           stock_level = '#{options['stock_level']}'
@@ -38,7 +44,7 @@ class Stock
     @id = stock['id']
   end
 
-  def album()
+  def albums()
     sql = "SELECT * FROM albums where id = #{@album_id}"
     album = SqlRunner.run(sql).first
     result = Album.new(album)

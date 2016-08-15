@@ -53,6 +53,13 @@ class Stock
     return result
   end
 
+  def artists()
+    sql = "SELECT * FROM artists WHERE id = #{@id}"
+    albums = SqlRunner.run(sql)
+    result = artists.map {|artist| Artist.new(artist)}
+    return result
+  end
+
   def stock_check()
     if @stock_level >= 10
       return "High"

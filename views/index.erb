@@ -1,14 +1,17 @@
 <h1>Current Stock Inventory:</h1>
 
-<ul>
-  <% @artists.each do |artist| %>
-    <li>
-    <%= artist.name %>
-      <ul>
-        <% artist.albums.each do |album| %>
-          <li><%= album.name %></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
+<table style = "width:100">
+  <tr>
+    <th>Artist Name</th>
+    <th>Album Name</th>
+    <th>Product Stock Level</th>
+    <th>Stock Check</th>
+  </tr>
+  <tr>
+    <td><%= @artists.each {|artist| artist.name} %></td>
+    <td><%= @albums.each {|album| album.name} %></td>
+    <td><%= @stocks.each {|stock| stock.stock_level} %></td>
+    <td><%= @stocks.each {|stock| stock.stock_check} %></td>
+  </tr>
+
+</table>

@@ -7,6 +7,9 @@
   Artist: <% stock.artists.each do |artist| %>
   <%= artist.name %> 
   <% end %><br>
+  Genre: <% stock.artists.each do |artist| %>
+  <%= artist.genre %> 
+  <% end %><br>
   Stock Level: <%= stock.stock_level %><br>
   Stock Check: <%= stock.stock_check %><br> 
   </p>

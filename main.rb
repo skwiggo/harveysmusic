@@ -8,8 +8,6 @@ require_relative('./models/stock')
 
 # MAIN INDEX(INVENTORY)
 get '/index' do
-  @artists = Artist.all()
-  @albums = Album.all()
   @stocks = Stock.all()
   erb(:index)
 end

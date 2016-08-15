@@ -3,8 +3,16 @@
 <form action="/artists" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name">
+ 
   <label for="name">Genre:</label>
-  <input type="text" name="genre">
+  <select name="genre">
+      <option value="Indie Rock">Indie Rock</option>
+      <option value="Hardcore">Hardcore</option>
+      <option value="Shoegaze">Shoegaze</option>
+      <option value="IDM">IDM</option>
+      <option value="Post-Hardcore">Post-Hardcore</option>
+      <option value="Prog/Psychedelia">Prog/Psychedelia</option>
+    </select>
 
   <input type='submit' value="Submit Artist">
 </form>

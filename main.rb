@@ -60,13 +60,13 @@ get '/albums' do
   erb(:'albums/index')
 end
 
-#NEW - HTML FORM
+#NEW 
 get '/albums/new' do 
   @artists = Artist.all()
   erb(:'albums/new')
 end
 
-#EDIT - HTML
+#EDIT 
 get '/albums/:id/edit' do
   @albums = Album.find(params[:id])
   erb(:'albums/edit')
@@ -119,6 +119,7 @@ end
 #SHOW
 get '/stocks/:id' do
   @stocks = Stock.find(params[:id])
+  @albums = Album.all()
   erb(:'stocks/show')
 end
 

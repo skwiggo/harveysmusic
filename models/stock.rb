@@ -31,8 +31,6 @@ class Stock
   def self.update(options)
     sql = "UPDATE stocks SET
           stock_level = '#{options['stock_level']}'
-          buy_price = options['buy_price']
-          sell_price = options['sell_price']
           WHERE id = #{options['id']}"
     return SqlRunner.run(sql)
   end

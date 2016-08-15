@@ -2,11 +2,6 @@
 <b>Quantity:</b>
 <p><%= @stocks.stock_level %></p>
 
-<b>Album:</b>
-<% @stocks.each do |stock| %>
-<p> <%= stock.album_id %></p>
-<% end %>
-
 <form action="/stocks/<%= @stocks.id %>/edit" method="get">
   <input type="submit" value="Edit Stock">
 </form>

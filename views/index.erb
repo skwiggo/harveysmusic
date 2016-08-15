@@ -1,6 +1,6 @@
 <h1>Current Stock Inventory:</h1>
 
-<table style = "width:100">
+<!-- <table style="width:100%">
   <tr>
     <th>Artist Name</th>
     <th>Album Name</th>
@@ -14,4 +14,16 @@
     <td><%= @stocks.each {|stock| stock.stock_check} %></td>
   </tr>
 
-</table>
+</table> -->
+
+<div>
+  <% @artists.each do |artist| %>
+    Artist: <%= artist.name  %><br><hr>
+  <% end %>
+  <% @albums.each do |album| %>
+    Product: <%= album.name  %><br><hr>
+  <% end %>
+  
+
+
+</div>

@@ -1,0 +1,10 @@
+<h2>Artists in Database</h2>
+
+<% @artists.each do |artist| %>
+  <b>Name:</b>
+  <p><%= artist.name() %></p>
+  <b>Genre:</b>
+    <p><%= artist.genre() %></p>
+  <b>Albums:</b>
+    <p><%= artist.albums() %></p>
+<% end %>

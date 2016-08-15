@@ -8,9 +8,10 @@
 <% end %>
 
 <form action="/stocks/<%= @stocks.id %>/edit" method="get">
-  <input type="submit" value="Edit Stock">
+  <input type="submit" value="Update Stock Order">
 </form>
 
 <form action="/stocks/<%= @stocks.id  %>/delete" method="post">
-  <input type="submit" value="Delete Stock">
+  <input type="submit" value="Delete All Stock">
+  WARNING! Should only be used if a product is entered in error or is being discontinued.
 </form>

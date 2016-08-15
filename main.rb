@@ -131,7 +131,7 @@ post '/stocks' do
 end
 
 #DESTROY
-post '/stocks/:id/stock' do
-  Album.destroy(params[:id])
+post '/stocks/:id/delete' do
+  Stock.destroy(params[:id])
   redirect(to('/stocks'))
 end

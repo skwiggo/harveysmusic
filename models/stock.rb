@@ -35,6 +35,11 @@ class Stock
     return SqlRunner.run(sql)
   end
 
+  def self.destroy(id)
+    sql = "DELETE FROM stocks WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
   def save()
     sql = "INSERT INTO stocks (album_id, stock_level, stock_health, buy_price, sell_price) VALUES 
     ( #{@album_id}, #{@stock_level}, '#{@stock_health}', #{@buy_price}, #{@sell_price}) RETURNING *"
@@ -43,7 +48,7 @@ class Stock
   end
 
   def albums()
-    sql = "SELECT * FROM albums WHERE album_id = #{@id}"
+    sql = "SELECT * FROM albums WHERE id = #{@id}"
     albums = SqlRunner.run(sql)
     result = albums.map {|album| Album.new(album)}
     return result

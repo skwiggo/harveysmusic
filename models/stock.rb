@@ -1,10 +1,11 @@
 require('pg')
 require_relative('../db/sql_runner')
 require_relative('album')
+require_relative('artist')
 
 class Stock
 
-  attr_reader(:id, :album_id, :stock_level, :stock_health, :buy_price, :sell_price)
+  attr_reader(:id, :album_id, :stock_level, :buy_price, :sell_price)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -54,7 +55,7 @@ class Stock
   end
 
   def artists()
-    sql = "SELECT * FROM artists WHERE id = #{@id}"
+    sql = "SELECT * FROM artists WHERE id = #{@album_id}"
     albums = SqlRunner.run(sql)
     result = artists.map {|artist| Artist.new(artist)}
     return result

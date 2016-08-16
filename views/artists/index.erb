@@ -1,14 +1,13 @@
 <h2>Artists in Database</h2>
 
 <% @artists.each do |artist| %>
-  <b>Name:</b>
-  <p><%= artist.name() %></p>
-  <b>Genre:</b>
-    <p><%= artist.genre() %></p>
+  <p><b>Name:</b> <%= artist.name() %><br>
+  <b>Genre:</b> <%= artist.genre() %><br>
   <b>Albums:</b>
-    <p><% artist.albums.each do |album| %>
+  <% artist.albums.each do |album| %>
       <%= album.name %>
-      <% end %>
+      <% end %><br>
     </p>
+    <hr>
 <% end %>
 

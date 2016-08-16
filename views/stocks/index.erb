@@ -4,7 +4,7 @@
   
   <p>
 
-  <b>Product ID:</b> <%= stock.album_id() %><br>
+  <b>Product ID:</b> <%= stock.album_id() %> <a href="/stocks/<%= stock.id  %>">Check Stock Record</a><br>
   
   <b>Quantity:</b> <%= stock.stock_level() %><br>
 
@@ -22,6 +22,5 @@
       <% end %>
     
     </p>
-    <hr>
 
 <% end %>

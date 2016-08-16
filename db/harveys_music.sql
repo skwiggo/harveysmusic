@@ -21,6 +21,5 @@ CREATE TABLE stocks (
   album_id int4 references albums(id) ON DELETE CASCADE,
   stock_level int4,
   buy_price int4,
-  sell_price int4,
-  UNIQUE (album_id)
+  sell_price int4
 );

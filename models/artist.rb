@@ -4,7 +4,7 @@ require_relative('../models/album')
 
 class Artist
 
-  attr_reader(:id, :name, :genre)
+  attr_accessor(:id, :name, :genre)
 
   def initialize( options )
     @id = options['id'].to_i
@@ -27,7 +27,7 @@ class Artist
 
   def self.update(options)
     sql = "UPDATE artists SET
-          name = '#{options['name']}'
+          name = '#{options['name']}',
           genre = '#{options['genre']}'
           WHERE id = #{options['id']}"
     SqlRunner.run(sql)

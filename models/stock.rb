@@ -5,7 +5,7 @@ require_relative('artist')
 
 class Stock
 
-  attr_reader(:id, :album_id, :stock_level, :buy_price, :sell_price)
+  attr_accessor(:id, :album_id, :stock_level, :buy_price, :sell_price)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -30,9 +30,11 @@ class Stock
 
   def self.update(options)
     sql = "UPDATE stocks SET
-          stock_level = '#{options['stock_level']}'
+          stock_level = #{options['stock_level']},
+          buy_price = #{options['buy_price']},
+          sell_price = #{options['sell_price']}
           WHERE id = #{options['id']}"
-    return SqlRunner.run(sql)
+    SqlRunner.run(sql)
   end
 
   def self.destroy(id)

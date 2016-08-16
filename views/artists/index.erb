@@ -3,13 +3,15 @@
 <% @artists.each do |artist| %>
   
   <p><b>Name:</b> <%= artist.name() %><br>
+  <a href="/artists/<%= artist.id  %>">Check Artist Record</a><br><br>
   
-  <b>Genre:</b> <%= artist.genre() %><br>
-  
-  <b>Albums:</b>
+  <b>Associated Products:</b>
   <% artist.albums.each do |album| %>
       <%= album.name %>
+      <br> <a href="/albums/<%= album.id  %>">Check Product Record</a><br>
       <% end %><br>
+      <b>Genre:</b> <%= artist.genre() %><br>
+    
     </p>
     <hr>
 <% end %>

@@ -2,25 +2,28 @@
 
 <% @stocks.each do |stock| %>
   
-  <p>
-
-  <b>Product ID:</b> <%= stock.album_id() %> <a href="/stocks/<%= stock.id  %>">Check Stock Record</a><br>
+<p><b>Product ID:</b> <%= stock.album_id() %><br>
+<a href="/stocks/<%= stock.id  %>">Check Stock Record</a><br><br>
   
-  <b>Quantity:</b> <%= stock.stock_level() %><br>
+  <b>Quantity:</b> <%= stock.stock_level() %><br><br>
 
   <b>Product Name:</b> 
   <% stock.albums.each do |album| %>
-      <%= album.name %>
+      <%= album.name %><br>
+      <a href="/albums/<%= album.id  %>">Check Product Record</a><br>
       <% end %><br>
     
 
   <b>Artist:</b>
     <% stock.albums.each do |album| %>
       <% album.artists.each do |artist| %>
-      <%= artist.name  %>
-      <% end %>
+      <%= artist.name  %><br>
+      <a href="/artists/<%= artist.id  %>">Check Artist Record</a><br>
+      <% end %><br>
+      
       <% end %>
     
     </p>
+    <hr>
 
 <% end %>

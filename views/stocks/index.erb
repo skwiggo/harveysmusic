@@ -1,8 +1,23 @@
 <h2>Stock Level</h2>
 
 <% @stocks.each do |stock| %>
-  <b>Album ID:</b>
+  
+  <b>Product ID:</b>
   <p><%= stock.album_id() %></p>
+  
   <b>Quantity:</b>
   <p><%= stock.stock_level() %></p>
+
+  <b>Product Name:</b>
+    <p><% stock.albums.each do |album| %>
+      <%= album.name %>
+      <% end %>
+    </p>
+
+  <b>Artist:</b>
+    <p><% stock.albums.each do |album| %>
+      <%= album.name %>
+      <% end %>
+    </p>
+
 <% end %>

@@ -110,6 +110,7 @@ end
 #INDEX
 get '/stocks' do
   @stocks = Stock.all()
+  @albums = Album.all()
   erb(:'stocks/index')
 end
 

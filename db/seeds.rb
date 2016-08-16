@@ -3,10 +3,6 @@ require_relative('../models/artist.rb')
 require_relative('../models/album.rb')
 require_relative('../models/stock.rb')
 
-Artist.delete()
-Album.delete()
-Stock.delete()
-
 artist1 = Artist.new({ 'name' => 'The Smiths', 'genre' => 'Indie Rock'})
 artist2 = Artist.new({ 'name' => 'The Replacements', 'genre' => 'Indie Rock'})
 artist3 = Artist.new({ 'name' => 'The Jesus and Mary Chain', 'genre' => 'Shoegaze'})
@@ -18,43 +14,61 @@ artist8 = Artist.new({ 'name' => 'Squarepusher', 'genre' => 'Electronica/IDM'})
 artist9 = Artist.new({ 'name' => 'Converge', 'genre' => 'Hardcore'})
 artist10 = Artist.new({ 'name' => 'Orange Juice', 'genre' => 'Indie Rock'})
 
-book1.save
-book2.save
-book3.save
-book4.save
-book5.save
+artist1.save
+artist2.save
+artist3.save
+artist4.save
+artist5.save
+artist6.save
+artist7.save
+artist8.save
+artist9.save
+artist10.save
 
+album1 = Album.new({ 'name' => 'Strangeways, Here We Come', 'artist_id' => artist1.id})
+album2 = Album.new({ 'name' => 'Tim', 'artist_id' => artist2.id})
+album3 = Album.new({ 'name' => 'Darklands', 'artist_id' => artist3.id})
+album4 = Album.new({ 'name' => 'Start Today', 'artist_id' => artist4.id})
+album5 = Album.new({ 'name' => 'Dance Tonight! Revolution Tomorrow!', 'artist_id' => artist5.id})
+album6 = Album.new({ 'name' => 'Untrue', 'artist_id' => artist6.id})
+album7 = Album.new({ 'name' => 'Anthem of the Sun', 'artist_id' => artist7.id})
+album8 = Album.new({ 'name' => 'Go Plastic', 'artist_id' => artist8.id})
+album9 = Album.new({ 'name' => 'All We Love We Leave Behind', 'artist_id' => artist9.id})
+album10 = Album.new({ 'name' => 'Rip It Up', 'artist_id' => artist10.id})
 
-member1 = Member.new({ 'name' => 'Conan the Librarian', 'address' => 'Hyboria'})
-member2 = Member.new({ 'name' => 'Val Gibson/Dryden', 'address' => 'Kanto region'})
-member3 = Member.new({ 'name' => 'Antonio Eusebio De Abreu Goncalves', 'address' => 'Papa Tyno Authentic Italian Ristorante'})
-member4 = Member.new({ 'name' => 'Jay Chetty', 'address' => 'TableTennisLand'})
-member5 = Member.new({ 'name' => 'Zsolt Podoba-Szalai', 'address' => 'Nearest Chippie'})
+album1.save
+album2.save
+album3.save
+album4.save
+album5.save
+album6.save
+album7.save
+album8.save
+album9.save
+album10.save
 
-member1.save
-member2.save
-member3.save
-member4.save
-member5.save
+stock1 = Stock.new({'album_id' => album1.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock2 = Stock.new({'album_id' => album2.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock3 = Stock.new({'album_id' => album3.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock4 = Stock.new({'album_id' => album4.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock5 = Stock.new({'album_id' => album5.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock6 = Stock.new({'album_id' => album6.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock7 = Stock.new({'album_id' => album7.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock8 = Stock.new({'album_id' => album8.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock9 = Stock.new({'album_id' => album9.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
+stock10 = Stock.new({'album_id' => album10.id, 'stock_level' => 5, 'buy_price' => 5, 'sell_price' => 7})
 
+stock1.save
+stock2.save
+stock3.save
+stock4.save
+stock5.save
+stock6.save
+stock7.save
+stock8.save
+stock9.save
+stock10.save
 
-rental1 = Rental.new({'book_id' => book1.id, 'member_id' => member1.id})
-rental2 = Rental.new({'book_id' => book2.id, 'member_id' => member1.id})
-rental3 = Rental.new({'book_id' => book3.id, 'member_id' => member2.id})
-rental4 = Rental.new({'book_id' => book4.id, 'member_id' => member1.id})
-rental5 = Rental.new({'book_id' => book5.id, 'member_id' => member2.id})
-rental6 = Rental.new({'book_id' => book3.id, 'member_id' => member3.id})
-rental7 = Rental.new({'book_id' => book2.id, 'member_id' => member5.id})
-rental8 = Rental.new({'book_id' => book4.id, 'member_id' => member5.id})
-
-rental1.save
-rental2.save
-rental3.save
-rental4.save
-rental5.save
-rental6.save
-rental7.save
-rental8.save
 
 binding.pry
 nil

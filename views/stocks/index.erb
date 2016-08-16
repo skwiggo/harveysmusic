@@ -16,7 +16,9 @@
 
   <b>Artist:</b>
     <p><% stock.albums.each do |album| %>
-      <%= album.name %>
+      <% album.artists.each do |artist| %>
+      <%= artist.name  %>
+      <% end %>
       <% end %>
     </p>
 

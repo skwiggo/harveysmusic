@@ -68,6 +68,8 @@ class Stock
       return "Medium"
     elsif @stock_level <= 3
       return "Low - Please re-order ASAP"
+    elsif @stock_level == 0
+      return "OUT OF STOCK - Please re-order NOW"
     end
   end
 

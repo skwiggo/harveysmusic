@@ -1,8 +1,11 @@
 <h2>Artists in Database</h2>
 
 <% @artists.each do |artist| %>
+  
   <p><b>Name:</b> <%= artist.name() %><br>
+  
   <b>Genre:</b> <%= artist.genre() %><br>
+  
   <b>Albums:</b>
   <% artist.albums.each do |album| %>
       <%= album.name %>

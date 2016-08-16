@@ -4,12 +4,15 @@
   
   <p><b>Artist ID:</b> <%= album.artist_id() %><br>
   
-  <b>Product Name:</b> <%= album.name() %><br>
+  <b>Product Name:</b> <%= album.name() %> <br> <a href="/albums/<%= album.id  %>">Check Product Record</a><br>
   
   <b>Artist:</b>
     <% album.artists.each do |artist| %>
-      <%= artist.name %>
-      <% end %>
+      <%= artist.name %><br>
+      <a href="/artists/<%= artist.id  %>">Check Artist Record</a>
+      <% end %><br>
+    
+
     </p>
     <hr>
 <% end %>

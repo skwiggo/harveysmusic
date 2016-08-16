@@ -73,4 +73,9 @@ class Stock
     end
   end
 
+  def markup()
+    result = @sell_price - @buy_price 
+    return result
+  end
+
 end

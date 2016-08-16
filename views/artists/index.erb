@@ -8,9 +8,9 @@
   <b>Associated Products:</b>
   <% artist.albums.each do |album| %>
       <%= album.name %>
-      <br> <a href="/albums/<%= album.id  %>">Check Product Record</a><br>
-      <% end %><br>
-      <b>Genre:</b> <%= artist.genre() %><br>
+      <br> <a href="/albums/<%= album.id  %>">Check Product Record</a>
+      <% end %><br><br>
+      <b>Genre:</b> <%= artist.genre() %>
     
     </p>
     <hr>

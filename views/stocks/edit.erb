@@ -24,14 +24,14 @@
     <option value="18">18</option>
     <option value="19">19</option>
     <option value="20">20</option>
-  </select>
-  <label for="name">Album:</label>
+  </select><br>
+  
  
- <!--  <select name="album_id">
-      <% @albums.each do |album| %>
-        <option value="<%= album.id %>"><%= album.name %></option>    
-      <%  end %>
-  </select>
-   -->
+   <label for="name"> Buy Price:</label>
+   <input type="text" name="buy_price" value="<%= @stocks.buy_price %>"><br>
+
+   <label for="name"> Sell Price:</label>
+   <input type="text" name="sell_price" value="<%= @stocks.sell_price %>"><br>
+
   <input type='submit' value="Submit Stock Order">
 </form>

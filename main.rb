@@ -59,9 +59,14 @@ end
 
 #CREATE
 post '/artists' do 
-  @artists = Artist.new(params)
-  @artists.save() 
+  @artists = Artist.new(params) 
+  @name = true
+  if @name == true
+  @artists.save()
+  else 
+    redirect(to('/error')) 
   erb(:'artists/create')
+  end
 end
 
 #DESTROY
@@ -73,7 +78,7 @@ end
 #UPDATE
 post '/albums/:id' do
   Album.update(params)
-  redirect(to( "/artists/#{params[:id]}"))
+  redirect(to( '/artists/#{params[:id]}'))
 end
 
 #INDEX

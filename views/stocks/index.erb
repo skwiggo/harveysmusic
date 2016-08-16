@@ -5,8 +5,6 @@
 <p><b>Product ID:</b> <%= stock.album_id() %><br>
 <a href="/stocks/<%= stock.id  %>">Check Stock Record</a><br><br>
   
-  <b>Quantity:</b> <%= stock.stock_level() %><br><br>
-
   <b>Product Name:</b> 
   <% stock.albums.each do |album| %>
       <%= album.name %><br>
@@ -21,7 +19,15 @@
       <% end %><br>
       
       <% end %>
-    
+
+    <b>Quantity:</b> <%= stock.stock_level() %><br><br>
+
+    <b>Buy Price:</b> £<%= stock.buy_price() %>.00<br><br>
+
+    <b>Sell Price:</b> £<%= stock.sell_price() %>.00<br><br>
+
+    <b>Markup:</b> £<%= stock.markup() %>.00<br><br>
+
     </p>
     <hr>
 

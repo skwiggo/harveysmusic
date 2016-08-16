@@ -32,4 +32,8 @@ class TestArtist < MiniTest::Test
   def test_stock_check()
     assert_equal("High", @stock.stock_check)
   end
+
+  def test_markup()
+    assert_equal(2, @stock.markup)
+  end
 end

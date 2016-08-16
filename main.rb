@@ -21,6 +21,7 @@ end
 #INDEX
 get '/artists' do
   @artists = Artist.all()
+  @albums = Album.all()
   erb(:'artists/index')
 end
 
@@ -64,6 +65,7 @@ end
 #INDEX
 get '/albums' do
   @albums = Album.all()
+  @artists = Artist.all()
   erb(:'albums/index')
 end
 

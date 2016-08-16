@@ -6,5 +6,9 @@
   <b>Genre:</b>
     <p><%= artist.genre() %></p>
   <b>Albums:</b>
-    <p><%= artist.albums() %></p>
+    <p><% artist.albums.each do |album| %>
+      <%= album.name %>
+      <% end %>
+    </p>
 <% end %>
+

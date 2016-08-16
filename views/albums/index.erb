@@ -1,10 +1,19 @@
 <h2>Albums in Database</h2>
 
 <% @albums.each do |album| %>
+  
   <b>Artist ID:</b>
   <p><%= album.artist_id() %></p>
+  
   <b>Product Name:</b>
   <p><%= album.name() %></p>
+  
+  <b>Artist:</b>
+    <p><% album.artists.each do |artist| %>
+      <%= artist.name %>
+      <% end %>
+    </p>
+
 <% end %>
 
 

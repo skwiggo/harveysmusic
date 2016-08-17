@@ -32,13 +32,6 @@ post '/artists/:id' do
   redirect(to( "/artists/#{params[:id]}"))
 end
 
-#INDEX
-get '/artists' do
-  @artists = Artist.all()
-  @albums = Album.all()
-  erb(:'artists/index')
-end
-
 #NEW - HTML FORM
 get '/artists/new' do 
   erb(:'artists/new')
@@ -74,13 +67,6 @@ end
 post '/albums/:id' do
   Album.update(params)
   redirect(to( '/artists/#{params[:id]}'))
-end
-
-#INDEX
-get '/albums' do
-  @albums = Album.all()
-  @artists = Artist.all()
-  erb(:'albums/index')
 end
 
 #NEW 

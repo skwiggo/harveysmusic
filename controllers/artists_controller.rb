@@ -32,7 +32,7 @@ end
 #CREATE
 post '/artists' do 
   @artists = Artist.new(params) 
-  result = @artists.save()
+  @artists.save()
   erb(:'artists/create')
 end
 

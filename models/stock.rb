@@ -5,7 +5,7 @@ require_relative('artist')
 
 class Stock
 
-  attr_accessor(:id, :album_id, :stock_level, :buy_price, :sell_price)
+  attr_reader(:id, :album_id, :stock_level, :buy_price, :sell_price)
 
   def initialize(options)
     @id = options['id'].to_i

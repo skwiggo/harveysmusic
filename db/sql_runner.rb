@@ -1,3 +1,5 @@
+require( 'pry-byebug' )
+
 class SqlRunner
 
   def self.run(sql)

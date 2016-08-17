@@ -31,6 +31,23 @@ li a:hover {
     color: grey;
 }
 
+input {
+  background-color: white;
+  color: black;
+  font-family: helvetica;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+   border: 3px solid black;
+}
+
 .titlebutton {
   top: 40px;
   position: relative;
@@ -73,12 +90,16 @@ li a:hover {
 }
 
 .homeimage {
-  background-image: url("http://www.feelnumb.com/wp-content/uploads/2011/02/theclashlondoncalling-1021x1024.jpg");
-  background-position: center
+  background-image: url("http://www.modern-canvas-art.com/ekmps/shops/robboweb1/images/the-clash-london-calling-canvas-art-painting-1436-p.jpg");
+  background-position: center;
   background-repeat: no-repeat;
-  width: 1000px;
-  height: 1000px;
+  width: 500px;
+  height: 500px;
   margin: 0 auto;
+}
+
+.title {
+  color: black;
 }
 
 .link:link {

@@ -2,7 +2,7 @@ body {
   background-color: tomato;
   margin: 0px;
   font-family: helvetica;
-  color: white;
+  color: aliceblue;
   font-size: 20px;
 }
 
@@ -20,15 +20,15 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: aliceblue;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: white;
-    color: black;
+    background-color: aliceblue;
+    color: grey;
 }
 
 .titlebutton {
@@ -79,6 +79,21 @@ li a:hover {
   width: 1000px;
   height: 1000px;
   margin: 0 auto;
+}
+
+.link:link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: white;
 }
 
 .footer {

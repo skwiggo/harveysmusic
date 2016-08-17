@@ -1,14 +1,14 @@
-<h2>Artists in IMS</h2>
+<h2>Artists in IMS.</h2>
 
 <% @artists.each do |artist| %>
   
   <p><b>Name:</b> <%= artist.name() %><br>
-  <a href="/artists/<%= artist.id  %>">Check Artist Record</a><br><br>
+  <a href="/artists/<%= artist.id  %>" class="link">Check Artist Record</a><br><br>
   
   <b>Associated Products:</b>
   <% artist.albums.each do |album| %>
       <%= album.name %>
-      <br> <a href="/albums/<%= album.id  %>">Check Product Record</a>
+      <br> <a href="/albums/<%= album.id  %>" class="link">Check Product Record</a>
       <% end %><br><br>
       <b>Genre:</b> <%= artist.genre() %>
     

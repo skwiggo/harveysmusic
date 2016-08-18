@@ -3,8 +3,18 @@
 <form action="/artists/<%= @artists.id  %>" method="post">
   <label for="name">Name:</label>
   <input type="text" name="name" value="<%= @artists.name %>">
-  <label for="name">Genre:</label>
-  <input type="text" name="genre" value="<%= @artists.genre %>">
+ 
+ <label for="name">Genre:</label>
+ <select name="genre">
+     <option value="Indie/Alternative Rock">Indie/Alternative Rock</option>
+     <option value="Hardcore">Hardcore</option>
+     <option value="Shoegaze">Shoegaze</option>
+     <option value="Electronica/IDM">Electronica/IDM</option>
+     <option value="Post-Hardcore">Post-Hardcore</option>
+     <option value="Prog/Psychedelia">Prog/Psychedelia</option>
+     <option value="Punk Rock">Punk Rock</option>
+     <option value="Post-Punk">Post-Punk</option>
+   </select>
   
   <input type='submit' value="Submit Changes">
 </form>
